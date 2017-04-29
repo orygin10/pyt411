@@ -18,5 +18,7 @@ python .
 
 ### Usage
 Do not forget to add < * > after your search query (mandatory for T411 searches)
+
 Example :
->>>Recherche: rogue one*
+
+> Recherche: rogue one*
