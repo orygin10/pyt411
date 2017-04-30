@@ -2,7 +2,7 @@
 Automatically download torrent and launch default torrent application
 
 ### Prerequesites
-- Python 3
+- Python 2.7
 - Windows
 - A working torrent client (BitTorrent, qBitTorrent, whatever)
 

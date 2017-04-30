@@ -1,7 +1,8 @@
+ # -*- encoding: utf8 -*-
 import requests
 import os
 import subprocess
-from urllib.parse import quote_plus
+from urllib import pathname2url
 
 T411_URL = "http://api.t411.ai"
 DOWNLOAD_DIR = 'downloaded'
@@ -11,13 +12,6 @@ class API:
         self.token = None
 
     def auth(self, username, password):
-        """Authenticate on T411 api, exits on error
-        Change AUTH_TOKEN value to valid Authorization token
-        Args:
-            username(str): T411 username
-            password(str): T411 password
-        Returns: nothing
-        """
 
         # Authenticating
         post_fields = {'username': username, 'password': password}
@@ -36,17 +30,15 @@ class API:
             fp = open('token.txt', 'r')
             # Reading token from file
             self.token = fp.readline()
-        except FileNotFoundError:
-            self.auth(input("Nom d'utilisateur: "), input("Mot de passe: "))
+        except IOError:
+            self.auth(raw_input("Nom d'utilisateur: "), raw_input("Mot de passe: "))
             fp = open('token.txt', 'w')
             # Writing token to file
             fp.write(self.token)
 
     def query(self, path, params=None):
-        r = requests.get(T411_URL + path, params,
+        return requests.get(T411_URL + path, params,
                 headers={'Authorization': self.token})
-
-        return r
 
     def search(self, query, **kwargs):
         params = {
@@ -67,7 +59,7 @@ class API:
         :param torrent: a json torrent description
         """
 
-        file_name = quote_plus(torrent['name']) + '.torrent'
+        file_name = pathname2url(torrent['name']) + '.torrent'
         torrent_id = torrent['id']
         q = self.query('/torrents/download/%s' % torrent_id)
 
@@ -76,5 +68,4 @@ class API:
 
         with open("%s/%s" % (DOWNLOAD_DIR, file_name), 'wb') as  t_fic:
             t_fic.write(q.content)
-            print('%s créé' % file_name)
         return "%s\%s\%s" % (os.getcwd(), DOWNLOAD_DIR, file_name)
