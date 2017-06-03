@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>common</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >DESKTOP-FQI3R7C</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;common
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="common-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="common-module.html">Module common</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"><tt class="py-comment"># -*- encoding: utf8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">urllib</tt> <tt class="py-keyword">import</tt> <tt class="py-name">pathname2url</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">string</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"> </tt>
+<a name="Common"></a><div id="Common-def"><a name="L6"></a><tt class="py-lineno">  6</tt> <a class="py-toggle" href="#" id="Common-toggle" onclick="return toggle('Common');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="common.Common-class.html">Common</a><tt class="py-op">:</tt> </tt>
+</div><div id="Common-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="Common-expanded"><a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"> </tt>
+<a name="Common.__init__"></a><div id="Common.__init__-def"><a name="L8"></a><tt class="py-lineno">  8</tt> <a class="py-toggle" href="#" id="Common.__init__-toggle" onclick="return toggle('Common.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="common.Common-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">api</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Common.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Common.__init__-expanded"><a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-0" class="py-name" targets="Module api=api-module.html"><a title="api" class="py-name" href="#" onclick="return doclink('link-0', 'api', 'link-0');">api</a></tt> <tt class="py-op">=</tt> <tt id="link-1" class="py-name"><a title="api" class="py-name" href="#" onclick="return doclink('link-1', 'api', 'link-0');">api</a></tt> </tt>
+</div><a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"> </tt>
+<a name="Common.search"></a><div id="Common.search-def"><a name="L11"></a><tt class="py-lineno"> 11</tt> <a class="py-toggle" href="#" id="Common.search-toggle" onclick="return toggle('Common.search');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="common.Common-class.html#search">search</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Common.search-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Common.search-expanded"><a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt class="py-docstring">        @summary: search for torrents</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: t411 query for exemple "Windows 10"</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"><tt class="py-docstring">        @type query: str</tt> </tt>
+<a name="L16"></a><tt class="py-lineno"> 16</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: List of dictionaries</tt> </tt>
+<a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line"><tt class="py-docstring">         """</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">        <tt id="link-2" class="py-name" targets="Method api.API.query()=api.API-class.html#query"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-2', 'query', 'link-2');">query</a></tt> <tt class="py-op">=</tt> <tt class="py-name">pathname2url</tt><tt class="py-op">(</tt><tt id="link-3" class="py-name"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-3', 'query', 'link-2');">query</a></tt><tt class="py-op">)</tt> <tt class="py-op">+</tt> <tt class="py-string">"*"</tt> </tt>
+<a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line">        <tt class="py-name">s</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-4" class="py-name"><a title="api" class="py-name" href="#" onclick="return doclink('link-4', 'api', 'link-0');">api</a></tt><tt class="py-op">.</tt><tt id="link-5" class="py-name" targets="Method api.API.raw_search()=api.API-class.html#raw_search"><a title="api.API.raw_search" class="py-name" href="#" onclick="return doclink('link-5', 'raw_search', 'link-5');">raw_search</a></tt><tt class="py-op">(</tt><tt id="link-6" class="py-name"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-6', 'query', 'link-2');">query</a></tt><tt class="py-op">,</tt> <tt class="py-name">limit</tt><tt class="py-op">=</tt><tt class="py-number">1000</tt><tt class="py-op">)</tt> </tt>
+<a name="L20"></a><tt class="py-lineno"> 20</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">s</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt class="py-string">'torrents'</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line"> </tt>
+<a name="Common.download"></a><div id="Common.download-def"><a name="L22"></a><tt class="py-lineno"> 22</tt> <a class="py-toggle" href="#" id="Common.download-toggle" onclick="return toggle('Common.download');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="common.Common-class.html#download">download</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">torrent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Common.download-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Common.download-expanded"><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L24"></a><tt class="py-lineno"> 24</tt>  <tt class="py-line"><tt class="py-docstring">        @summary: Download a single torrent</tt> </tt>
+<a name="L25"></a><tt class="py-lineno"> 25</tt>  <tt class="py-line"><tt class="py-docstring">        @param torrent: A single torrent</tt> </tt>
+<a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line"><tt class="py-docstring">        @type torrent: dictionary</tt> </tt>
+<a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L28"></a><tt class="py-lineno"> 28</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">"Downloading %s"</tt> <tt class="py-op">%</tt> <tt class="py-name">torrent</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> </tt>
+<a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-name">tfile</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name"><a title="api" class="py-name" href="#" onclick="return doclink('link-7', 'api', 'link-0');">api</a></tt><tt class="py-op">.</tt><tt id="link-8" class="py-name" targets="Method api.API.raw_download()=api.API-class.html#raw_download"><a title="api.API.raw_download" class="py-name" href="#" onclick="return doclink('link-8', 'raw_download', 'link-8');">raw_download</a></tt><tt class="py-op">(</tt><tt class="py-name">torrent</tt><tt class="py-op">)</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line">        <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">startfile</tt><tt class="py-op">(</tt><tt class="py-name">tfile</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"> </tt>
+<a name="Common.download_season"></a><div id="Common.download_season-def"><a name="L32"></a><tt class="py-lineno"> 32</tt> <a class="py-toggle" href="#" id="Common.download_season-toggle" onclick="return toggle('Common.download_season');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="common.Common-class.html#download_season">download_season</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">season_search_string</tt><tt class="py-op">,</tt> <tt class="py-param">quality</tt><tt class="py-op">=</tt><tt class="py-string">'1080p'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="Common.download_season-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="Common.download_season-expanded"><a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">        @summary: Downloads full season</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"><tt class="py-docstring">        @param season_search_string: Search string for exemple "Vikings s03"</tt> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line"><tt class="py-docstring">        @type season_search_string: str</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt> <tt class="py-string">'0 - VOSTFR (par defaut)\n1 - FRENCH'</tt> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">lang</tt> <tt class="py-op">=</tt> <tt class="py-string">'FRENCH'</tt> <tt class="py-keyword">if</tt> <tt class="py-name">raw_input</tt><tt class="py-op">(</tt><tt class="py-string">'Saisir 0 ou 1 : '</tt><tt class="py-op">)</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt> <tt class="py-keyword">else</tt> <tt class="py-string">'VOSTFR'</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line"> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line">        <tt class="py-name">ep</tt> <tt class="py-op">=</tt> <tt class="py-number">1</tt> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-name">fin_saison</tt> <tt class="py-op">=</tt> <tt class="py-name">False</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">        <tt class="py-keyword">while</tt> <tt class="py-keyword">not</tt> <tt class="py-name">fin_saison</tt><tt class="py-op">:</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line">            <tt id="link-9" class="py-name"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-9', 'query', 'link-2');">query</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'%se%.2d* %s* %s'</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">season_search_string</tt><tt class="py-op">,</tt> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">                                          <tt class="py-name">ep</tt><tt class="py-op">,</tt> <tt class="py-name">quality</tt><tt class="py-op">,</tt> <tt class="py-name">lang</tt><tt class="py-op">)</tt> </tt>
+<a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line">            <tt class="py-name">torrents</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name" targets="Method common.Common.search()=common.Common-class.html#search"><a title="common.Common.search" class="py-name" href="#" onclick="return doclink('link-10', 'search', 'link-10');">search</a></tt><tt class="py-op">(</tt><tt id="link-11" class="py-name"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-11', 'query', 'link-2');">query</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L47"></a><tt class="py-lineno"> 47</tt>  <tt class="py-line"> </tt>
+<a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">            <tt class="py-keyword">if</tt> <tt class="py-name">torrents</tt> <tt class="py-op">==</tt> <tt class="py-op">[</tt><tt class="py-op">]</tt><tt class="py-op">:</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line">                <tt class="py-keyword">if</tt> <tt class="py-name">quality</tt> <tt class="py-op">==</tt> <tt class="py-string">'1080p'</tt><tt class="py-op">:</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line">                    <tt class="py-name">quality</tt> <tt class="py-op">=</tt> <tt class="py-string">'720p'</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line">                <tt class="py-keyword">elif</tt> <tt class="py-name">quality</tt> <tt class="py-op">==</tt> <tt class="py-string">'720p'</tt><tt class="py-op">:</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">                    <tt class="py-keyword">print</tt> <tt class="py-string">'Fin de la saison'</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">                    <tt class="py-name">fin_saison</tt> <tt class="py-op">=</tt> <tt class="py-name">True</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">            <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">                <tt class="py-name">dl</tt> <tt class="py-op">=</tt> <tt id="link-12" class="py-name" targets="Function common.most_seeded()=common-module.html#most_seeded"><a title="common.most_seeded" class="py-name" href="#" onclick="return doclink('link-12', 'most_seeded', 'link-12');">most_seeded</a></tt><tt class="py-op">(</tt><tt class="py-name">torrents</tt><tt class="py-op">)</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-13" class="py-name" targets="Method common.Common.download()=common.Common-class.html#download"><a title="common.Common.download" class="py-name" href="#" onclick="return doclink('link-13', 'download', 'link-13');">download</a></tt><tt class="py-op">(</tt><tt class="py-name">dl</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">                <tt class="py-name">ep</tt> <tt class="py-op">=</tt> <tt class="py-name">ep</tt> <tt class="py-op">+</tt> <tt class="py-number">1</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                <tt class="py-name">quality</tt> <tt class="py-op">=</tt> <tt class="py-string">'1080p'</tt> </tt>
+</div></div><a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line"> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="most_seeded"></a><div id="most_seeded-def"><a name="L61"></a><tt class="py-lineno"> 61</tt> <a class="py-toggle" href="#" id="most_seeded-toggle" onclick="return toggle('most_seeded');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="common-module.html#most_seeded">most_seeded</a><tt class="py-op">(</tt><tt class="py-param">torrents</tt><tt class="py-op">,</tt> <tt class="py-param">num</tt><tt class="py-op">=</tt><tt class="py-number">1</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="most_seeded-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="most_seeded-expanded"><a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">    <tt class="py-docstring">"""Returns max seeded torrent</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line"><tt class="py-docstring">    @param torrents: Result of a search function</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line"><tt class="py-docstring">    @type torrents: List of dictionaries</tt> </tt>
+<a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"><tt class="py-docstring">    @return: Top [num] most seeded torrents</tt> </tt>
+<a name="L66"></a><tt class="py-lineno"> 66</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: List of dictionaries</tt> </tt>
+<a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line">    <tt class="py-name">top</tt> <tt class="py-op">=</tt> <tt class="py-name">sorted</tt><tt class="py-op">(</tt><tt class="py-name">torrents</tt><tt class="py-op">,</tt> <tt class="py-name">key</tt><tt class="py-op">=</tt><tt class="py-keyword">lambda</tt> <tt class="py-name">x</tt><tt class="py-op">:</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">x</tt><tt class="py-op">[</tt><tt class="py-string">'seeders'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">reverse</tt><tt class="py-op">=</tt><tt class="py-name">True</tt><tt class="py-op">)</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">top</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">]</tt> <tt class="py-keyword">if</tt> <tt class="py-name">num</tt> <tt class="py-op">==</tt> <tt class="py-number">1</tt> <tt class="py-keyword">else</tt> <tt class="py-name">top</tt><tt class="py-op">[</tt><tt class="py-number">0</tt><tt class="py-op">:</tt><tt class="py-name">num</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"> </tt>
+<a name="choice"></a><div id="choice-def"><a name="L73"></a><tt class="py-lineno"> 73</tt> <a class="py-toggle" href="#" id="choice-toggle" onclick="return toggle('choice');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="common-module.html#choice">choice</a><tt class="py-op">(</tt><tt class="py-param">torrents</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="choice-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="choice-expanded"><a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">    @param torrents: Ordered torrents</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line"><tt class="py-docstring">    @type torrents: A list of dictionaries</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line"><tt class="py-docstring">    @returns: One chosen torrent</tt> </tt>
+<a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: Dictionary</tt> </tt>
+<a name="L79"></a><tt class="py-lineno"> 79</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">    <tt class="py-keyword">for</tt> <tt class="py-name">i</tt><tt class="py-op">,</tt> <tt class="py-name">torrent</tt> <tt class="py-keyword">in</tt> <tt class="py-name">enumerate</tt><tt class="py-op">(</tt><tt class="py-name">torrents</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line">        <tt class="py-keyword">print</tt><tt class="py-op">(</tt><tt class="py-string">"%d - %s (%s seeders)"</tt> <tt class="py-op">%</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line">              <tt class="py-op">(</tt><tt class="py-name">i</tt><tt class="py-op">,</tt> <tt class="py-name">torrent</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt><tt class="py-op">,</tt> <tt class="py-name">torrent</tt><tt class="py-op">[</tt><tt class="py-string">'seeders'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line">    <tt class="py-name">num_choice</tt> <tt class="py-op">=</tt> <tt class="py-name">int</tt><tt class="py-op">(</tt><tt class="py-name">input</tt><tt class="py-op">(</tt><tt class="py-string">'\nTorrent choisi : '</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">torrents</tt><tt class="py-op">[</tt><tt class="py-name">num_choice</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"> </tt>
+<a name="format_filename"></a><div id="format_filename-def"><a name="L87"></a><tt class="py-lineno"> 87</tt> <a class="py-toggle" href="#" id="format_filename-toggle" onclick="return toggle('format_filename');">-</a><tt class="py-line"><tt class="py-keyword">def</tt> <a class="py-def-name" href="common-module.html#format_filename">format_filename</a><tt class="py-op">(</tt><tt class="py-param">s</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="format_filename-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="format_filename-expanded"><a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">    <tt class="py-docstring">"""</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line"><tt class="py-docstring">    @summary: Replace ambiguous filename chars with standard chars</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line"><tt class="py-docstring">    @param s: Raw filename</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line"><tt class="py-docstring">    @type s: str</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line"><tt class="py-docstring">    @return: Formatted filename</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"><tt class="py-docstring">    @rtype: str</tt> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line"><tt class="py-docstring">    """</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">    <tt class="py-name">valid_chars</tt> <tt class="py-op">=</tt> <tt class="py-string">"-_.() %s%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">string</tt><tt class="py-op">.</tt><tt class="py-name">ascii_letters</tt><tt class="py-op">,</tt> <tt class="py-name">string</tt><tt class="py-op">.</tt><tt class="py-name">digits</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">    <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-string">''</tt><tt class="py-op">.</tt><tt class="py-name">join</tt><tt class="py-op">(</tt><tt class="py-name">c</tt> <tt class="py-keyword">for</tt> <tt class="py-name">c</tt> <tt class="py-keyword">in</tt> <tt class="py-name">s</tt> <tt class="py-keyword">if</tt> <tt class="py-name">c</tt> <tt class="py-keyword">in</tt> <tt class="py-name">valid_chars</tt><tt class="py-op">)</tt> </tt>
+<a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line">    <tt class="py-name">filename</tt> <tt class="py-op">=</tt> <tt class="py-name">filename</tt><tt class="py-op">.</tt><tt class="py-name">replace</tt><tt class="py-op">(</tt><tt class="py-string">' '</tt><tt class="py-op">,</tt> <tt class="py-string">'_'</tt><tt class="py-op">)</tt>  <tt class="py-comment"># I don't like spaces in filenames.</tt> </tt>
+<a name="L98"></a><tt class="py-lineno"> 98</tt>  <tt class="py-line">    <tt class="py-keyword">return</tt> <tt class="py-name">filename</tt> </tt>
+</div><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >DESKTOP-FQI3R7C</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri May 26 15:45:37 2017
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

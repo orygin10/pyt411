@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>api</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >DESKTOP-FQI3R7C</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;api
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="api-pysrc.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h1 class="epydoc">Source Code for <a href="api-module.html">Module api</a></h1>
+<pre class="py-src">
+<a name="L1"></a><tt class="py-lineno">  1</tt>  <tt class="py-line"> <tt class="py-comment"># -*- encoding: utf8 -*-</tt> </tt>
+<a name="L2"></a><tt class="py-lineno">  2</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">requests</tt> </tt>
+<a name="L3"></a><tt class="py-lineno">  3</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">os</tt> </tt>
+<a name="L4"></a><tt class="py-lineno">  4</tt>  <tt class="py-line"><tt class="py-keyword">import</tt> <tt class="py-name">subprocess</tt> </tt>
+<a name="L5"></a><tt class="py-lineno">  5</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt class="py-name">urllib</tt> <tt class="py-keyword">import</tt> <tt class="py-name">pathname2url</tt> </tt>
+<a name="L6"></a><tt class="py-lineno">  6</tt>  <tt class="py-line"><tt class="py-keyword">from</tt> <tt id="link-0" class="py-name" targets="Module common=common-module.html"><a title="common" class="py-name" href="#" onclick="return doclink('link-0', 'common', 'link-0');">common</a></tt> <tt class="py-keyword">import</tt> <tt id="link-1" class="py-name" targets="Function common.format_filename()=common-module.html#format_filename"><a title="common.format_filename" class="py-name" href="#" onclick="return doclink('link-1', 'format_filename', 'link-1');">format_filename</a></tt> </tt>
+<a name="L7"></a><tt class="py-lineno">  7</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L8"></a><tt class="py-lineno">  8</tt>  <tt class="py-line"><tt class="py-string">@var T411_URL: T411 valid api URL</tt> </tt>
+<a name="L9"></a><tt class="py-lineno">  9</tt>  <tt class="py-line"><tt class="py-string">@var DOWNLOAD_DIR: Directory in which .torrents are downloaded</tt> </tt>
+<a name="L10"></a><tt class="py-lineno"> 10</tt>  <tt class="py-line"><tt class="py-string">@ivar token: T411 API Authentication Token</tt> </tt>
+<a name="L11"></a><tt class="py-lineno"> 11</tt>  <tt class="py-line"><tt class="py-string">"""</tt> </tt>
+<a name="L12"></a><tt class="py-lineno"> 12</tt>  <tt class="py-line"> </tt>
+<a name="L13"></a><tt class="py-lineno"> 13</tt>  <tt class="py-line"><tt id="link-2" class="py-name" targets="Variable api.T411_URL=api-module.html#T411_URL"><a title="api.T411_URL" class="py-name" href="#" onclick="return doclink('link-2', 'T411_URL', 'link-2');">T411_URL</a></tt> <tt class="py-op">=</tt> <tt class="py-string">"http://api.t411.al"</tt> </tt>
+<a name="L14"></a><tt class="py-lineno"> 14</tt>  <tt class="py-line"><tt id="link-3" class="py-name" targets="Variable api.DOWNLOAD_DIR=api-module.html#DOWNLOAD_DIR"><a title="api.DOWNLOAD_DIR" class="py-name" href="#" onclick="return doclink('link-3', 'DOWNLOAD_DIR', 'link-3');">DOWNLOAD_DIR</a></tt> <tt class="py-op">=</tt> <tt class="py-string">'downloaded'</tt> </tt>
+<a name="L15"></a><tt class="py-lineno"> 15</tt>  <tt class="py-line"> </tt>
+<a name="RequestsError"></a><div id="RequestsError-def"><a name="L16"></a><tt class="py-lineno"> 16</tt> <a class="py-toggle" href="#" id="RequestsError-toggle" onclick="return toggle('RequestsError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="api.RequestsError-class.html">RequestsError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="RequestsError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="RequestsError-expanded"><a name="L17"></a><tt class="py-lineno"> 17</tt>  <tt class="py-line">    <tt class="py-docstring">"""Error in API response"""</tt> </tt>
+<a name="L18"></a><tt class="py-lineno"> 18</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L19"></a><tt class="py-lineno"> 19</tt>  <tt class="py-line"> </tt>
+<a name="AuthError"></a><div id="AuthError-def"><a name="L20"></a><tt class="py-lineno"> 20</tt> <a class="py-toggle" href="#" id="AuthError-toggle" onclick="return toggle('AuthError');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="api.AuthError-class.html">AuthError</a><tt class="py-op">(</tt><tt class="py-base-class">Exception</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="AuthError-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="AuthError-expanded"><a name="L21"></a><tt class="py-lineno"> 21</tt>  <tt class="py-line">    <tt class="py-docstring">"""Error while authenticating"""</tt> </tt>
+<a name="L22"></a><tt class="py-lineno"> 22</tt>  <tt class="py-line">    <tt class="py-keyword">pass</tt> </tt>
+</div><a name="L23"></a><tt class="py-lineno"> 23</tt>  <tt class="py-line"> </tt>
+<a name="API"></a><div id="API-def"><a name="L24"></a><tt class="py-lineno"> 24</tt> <a class="py-toggle" href="#" id="API-toggle" onclick="return toggle('API');">-</a><tt class="py-line"><tt class="py-keyword">class</tt> <a class="py-def-name" href="api.API-class.html">API</a><tt class="py-op">:</tt> </tt>
+</div><div id="API-collapsed" style="display:none;" pad="+++" indent="++++"></div><div id="API-expanded"><a name="API.__init__"></a><div id="API.__init__-def"><a name="L25"></a><tt class="py-lineno"> 25</tt> <a class="py-toggle" href="#" id="API.__init__-toggle" onclick="return toggle('API.__init__');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="api.API-class.html#__init__">__init__</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="API.__init__-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="API.__init__-expanded"><a name="L26"></a><tt class="py-lineno"> 26</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">token</tt> <tt class="py-op">=</tt> <tt class="py-name">None</tt> </tt>
+</div><a name="L27"></a><tt class="py-lineno"> 27</tt>  <tt class="py-line"> </tt>
+<a name="API.auth"></a><div id="API.auth-def"><a name="L28"></a><tt class="py-lineno"> 28</tt> <a class="py-toggle" href="#" id="API.auth-toggle" onclick="return toggle('API.auth');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="api.API-class.html#auth">auth</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">username</tt><tt class="py-op">,</tt> <tt class="py-param">password</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="API.auth-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="API.auth-expanded"><a name="L29"></a><tt class="py-lineno"> 29</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L30"></a><tt class="py-lineno"> 30</tt>  <tt class="py-line"><tt class="py-docstring">        @param username: valid t411 username</tt> </tt>
+<a name="L31"></a><tt class="py-lineno"> 31</tt>  <tt class="py-line"><tt class="py-docstring">        @param password: valid plaintext t411 password</tt> </tt>
+<a name="L32"></a><tt class="py-lineno"> 32</tt>  <tt class="py-line"><tt class="py-docstring">        @summary: retrieves an authentication token from t411 api</tt> </tt>
+<a name="L33"></a><tt class="py-lineno"> 33</tt>  <tt class="py-line"><tt class="py-docstring">        @raise AuthError: Username or password invalid</tt> </tt>
+<a name="L34"></a><tt class="py-lineno"> 34</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L35"></a><tt class="py-lineno"> 35</tt>  <tt class="py-line"> </tt>
+<a name="L36"></a><tt class="py-lineno"> 36</tt>  <tt class="py-line">        <tt class="py-comment"># Authenticating</tt> </tt>
+<a name="L37"></a><tt class="py-lineno"> 37</tt>  <tt class="py-line">        <tt class="py-name">post_fields</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt><tt class="py-string">'username'</tt><tt class="py-op">:</tt> <tt class="py-name">username</tt><tt class="py-op">,</tt> <tt class="py-string">'password'</tt><tt class="py-op">:</tt> <tt class="py-name">password</tt><tt class="py-op">}</tt> </tt>
+<a name="L38"></a><tt class="py-lineno"> 38</tt>  <tt class="py-line"> </tt>
+<a name="L39"></a><tt class="py-lineno"> 39</tt>  <tt class="py-line">        <tt class="py-name">r</tt> <tt class="py-op">=</tt> <tt class="py-name">requests</tt><tt class="py-op">.</tt><tt class="py-name">post</tt><tt class="py-op">(</tt><tt id="link-4" class="py-name"><a title="api.T411_URL" class="py-name" href="#" onclick="return doclink('link-4', 'T411_URL', 'link-2');">T411_URL</a></tt> <tt class="py-op">+</tt> <tt class="py-string">'/auth'</tt><tt class="py-op">,</tt> <tt class="py-name">post_fields</tt><tt class="py-op">)</tt> </tt>
+<a name="L40"></a><tt class="py-lineno"> 40</tt>  <tt class="py-line">        <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">r</tt><tt class="py-op">.</tt><tt class="py-name">json</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L41"></a><tt class="py-lineno"> 41</tt>  <tt class="py-line"> </tt>
+<a name="L42"></a><tt class="py-lineno"> 42</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'error'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">response</tt><tt class="py-op">:</tt> </tt>
+<a name="L43"></a><tt class="py-lineno"> 43</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-5" class="py-name" targets="Class api.AuthError=api.AuthError-class.html"><a title="api.AuthError" class="py-name" href="#" onclick="return doclink('link-5', 'AuthError', 'link-5');">AuthError</a></tt><tt class="py-op">(</tt><tt class="py-name">response</tt><tt class="py-op">[</tt><tt class="py-string">'error'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L44"></a><tt class="py-lineno"> 44</tt>  <tt class="py-line"> </tt>
+<a name="L45"></a><tt class="py-lineno"> 45</tt>  <tt class="py-line">        <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">token</tt> <tt class="py-op">=</tt> <tt class="py-name">response</tt><tt class="py-op">[</tt><tt class="py-string">'token'</tt><tt class="py-op">]</tt> </tt>
+</div><a name="L46"></a><tt class="py-lineno"> 46</tt>  <tt class="py-line"> </tt>
+<a name="API.persistent_auth"></a><div id="API.persistent_auth-def"><a name="L47"></a><tt class="py-lineno"> 47</tt> <a class="py-toggle" href="#" id="API.persistent_auth-toggle" onclick="return toggle('API.persistent_auth');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="api.API-class.html#persistent_auth">persistent_auth</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="API.persistent_auth-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="API.persistent_auth-expanded"><a name="L48"></a><tt class="py-lineno"> 48</tt>  <tt class="py-line">        <tt class="py-docstring">"""reads token from file or creates a new one</tt> </tt>
+<a name="L49"></a><tt class="py-lineno"> 49</tt>  <tt class="py-line"><tt class="py-docstring">        then stores it in token instance variable</tt> </tt>
+<a name="L50"></a><tt class="py-lineno"> 50</tt>  <tt class="py-line"><tt class="py-docstring">        @raise AuthError: Token verification failure</tt> </tt>
+<a name="L51"></a><tt class="py-lineno"> 51</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L52"></a><tt class="py-lineno"> 52</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt class="py-string">'token.txt'</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L53"></a><tt class="py-lineno"> 53</tt>  <tt class="py-line">            <tt class="py-keyword">with</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-string">'token.txt'</tt><tt class="py-op">,</tt> <tt class="py-string">'r'</tt><tt class="py-op">)</tt> <tt class="py-keyword">as</tt> <tt class="py-name">fp</tt><tt class="py-op">:</tt> </tt>
+<a name="L54"></a><tt class="py-lineno"> 54</tt>  <tt class="py-line">                <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">token</tt> <tt class="py-op">=</tt> <tt class="py-name">fp</tt><tt class="py-op">.</tt><tt class="py-name">readline</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L55"></a><tt class="py-lineno"> 55</tt>  <tt class="py-line">        <tt class="py-keyword">else</tt><tt class="py-op">:</tt> </tt>
+<a name="L56"></a><tt class="py-lineno"> 56</tt>  <tt class="py-line">            <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-6" class="py-name" targets="Method api.API.auth()=api.API-class.html#auth"><a title="api.API.auth" class="py-name" href="#" onclick="return doclink('link-6', 'auth', 'link-6');">auth</a></tt><tt class="py-op">(</tt><tt class="py-name">raw_input</tt><tt class="py-op">(</tt><tt class="py-string">"Nom d'utilisateur: "</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-name">raw_input</tt><tt class="py-op">(</tt><tt class="py-string">"Mot de passe: "</tt><tt class="py-op">)</tt><tt class="py-op">)</tt> </tt>
+<a name="L57"></a><tt class="py-lineno"> 57</tt>  <tt class="py-line">            <tt class="py-keyword">with</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-string">'token.txt'</tt><tt class="py-op">,</tt> <tt class="py-string">'w'</tt><tt class="py-op">)</tt> <tt class="py-keyword">as</tt> <tt class="py-name">fp</tt><tt class="py-op">:</tt> </tt>
+<a name="L58"></a><tt class="py-lineno"> 58</tt>  <tt class="py-line">                <tt class="py-comment"># Writing token to file</tt> </tt>
+<a name="L59"></a><tt class="py-lineno"> 59</tt>  <tt class="py-line">                <tt class="py-name">fp</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">token</tt><tt class="py-op">)</tt> </tt>
+<a name="L60"></a><tt class="py-lineno"> 60</tt>  <tt class="py-line"> </tt>
+<a name="L61"></a><tt class="py-lineno"> 61</tt>  <tt class="py-line">        <tt class="py-name">q</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-7" class="py-name" targets="Method api.API.query()=api.API-class.html#query"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-7', 'query', 'link-7');">query</a></tt><tt class="py-op">(</tt><tt class="py-string">'/torrents/search/windows'</tt><tt class="py-op">)</tt> <tt class="py-comment"># Testing auth token</tt> </tt>
+<a name="L62"></a><tt class="py-lineno"> 62</tt>  <tt class="py-line">        <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">q</tt><tt class="py-op">.</tt><tt class="py-name">json</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L63"></a><tt class="py-lineno"> 63</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'error'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">response</tt><tt class="py-op">:</tt> </tt>
+<a name="L64"></a><tt class="py-lineno"> 64</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-8" class="py-name"><a title="api.AuthError" class="py-name" href="#" onclick="return doclink('link-8', 'AuthError', 'link-5');">AuthError</a></tt><tt class="py-op">(</tt><tt class="py-string">"Token is invalid"</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L65"></a><tt class="py-lineno"> 65</tt>  <tt class="py-line"> </tt>
+<a name="API.query"></a><div id="API.query-def"><a name="L66"></a><tt class="py-lineno"> 66</tt> <a class="py-toggle" href="#" id="API.query-toggle" onclick="return toggle('API.query');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="api.API-class.html#query">query</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">path</tt><tt class="py-op">,</tt> <tt class="py-param">params</tt><tt class="py-op">=</tt><tt class="py-name">None</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="API.query-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="API.query-expanded"><a name="L67"></a><tt class="py-lineno"> 67</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L68"></a><tt class="py-lineno"> 68</tt>  <tt class="py-line"><tt class="py-docstring">        @summary: Webservice query on t411 api</tt> </tt>
+<a name="L69"></a><tt class="py-lineno"> 69</tt>  <tt class="py-line"><tt class="py-docstring">        @param path: Full query plaintext path for exemple /torrents/download/45224</tt> </tt>
+<a name="L70"></a><tt class="py-lineno"> 70</tt>  <tt class="py-line"><tt class="py-docstring">        @type path: str</tt> </tt>
+<a name="L71"></a><tt class="py-lineno"> 71</tt>  <tt class="py-line"><tt class="py-docstring">        @param params: Optional params for query; offset or limit</tt> </tt>
+<a name="L72"></a><tt class="py-lineno"> 72</tt>  <tt class="py-line"><tt class="py-docstring">        @type params: dict</tt> </tt>
+<a name="L73"></a><tt class="py-lineno"> 73</tt>  <tt class="py-line"><tt class="py-docstring">        @return: JSON response</tt> </tt>
+<a name="L74"></a><tt class="py-lineno"> 74</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: str</tt> </tt>
+<a name="L75"></a><tt class="py-lineno"> 75</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L76"></a><tt class="py-lineno"> 76</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">requests</tt><tt class="py-op">.</tt><tt class="py-name">get</tt><tt class="py-op">(</tt><tt id="link-9" class="py-name"><a title="api.T411_URL" class="py-name" href="#" onclick="return doclink('link-9', 'T411_URL', 'link-2');">T411_URL</a></tt> <tt class="py-op">+</tt> <tt class="py-name">path</tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">,</tt> </tt>
+<a name="L77"></a><tt class="py-lineno"> 77</tt>  <tt class="py-line">                <tt class="py-name">headers</tt><tt class="py-op">=</tt><tt class="py-op">{</tt><tt class="py-string">'Authorization'</tt><tt class="py-op">:</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt class="py-name">token</tt><tt class="py-op">}</tt><tt class="py-op">)</tt> </tt>
+</div><a name="L78"></a><tt class="py-lineno"> 78</tt>  <tt class="py-line"> </tt>
+<a name="API.raw_search"></a><div id="API.raw_search-def"><a name="L79"></a><tt class="py-lineno"> 79</tt> <a class="py-toggle" href="#" id="API.raw_search-toggle" onclick="return toggle('API.raw_search');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="api.API-class.html#raw_search">raw_search</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">query</tt><tt class="py-op">,</tt> <tt class="py-op">**</tt><tt class="py-param">kwargs</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="API.raw_search-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="API.raw_search-expanded"><a name="L80"></a><tt class="py-lineno"> 80</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L81"></a><tt class="py-lineno"> 81</tt>  <tt class="py-line"><tt class="py-docstring">        @summary: Search a torrent on t411</tt> </tt>
+<a name="L82"></a><tt class="py-lineno"> 82</tt>  <tt class="py-line"><tt class="py-docstring">        @param query: Valid URL-Formatted torrent query for exemple "Windows%20Seven"</tt> </tt>
+<a name="L83"></a><tt class="py-lineno"> 83</tt>  <tt class="py-line"><tt class="py-docstring">        @type query: str</tt> </tt>
+<a name="L84"></a><tt class="py-lineno"> 84</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Found torrents</tt> </tt>
+<a name="L85"></a><tt class="py-lineno"> 85</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: Parsed JSON</tt> </tt>
+<a name="L86"></a><tt class="py-lineno"> 86</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L87"></a><tt class="py-lineno"> 87</tt>  <tt class="py-line">        <tt class="py-name">params</tt> <tt class="py-op">=</tt> <tt class="py-op">{</tt> </tt>
+<a name="L88"></a><tt class="py-lineno"> 88</tt>  <tt class="py-line">            <tt class="py-string">'offset'</tt><tt class="py-op">:</tt><tt class="py-number">0</tt> </tt>
+<a name="L89"></a><tt class="py-lineno"> 89</tt>  <tt class="py-line">        <tt class="py-op">}</tt> </tt>
+<a name="L90"></a><tt class="py-lineno"> 90</tt>  <tt class="py-line">        <tt class="py-name">params</tt><tt class="py-op">.</tt><tt class="py-name">update</tt><tt class="py-op">(</tt><tt class="py-name">kwargs</tt><tt class="py-op">)</tt> </tt>
+<a name="L91"></a><tt class="py-lineno"> 91</tt>  <tt class="py-line">        <tt class="py-name">q</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-10" class="py-name"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-10', 'query', 'link-7');">query</a></tt><tt class="py-op">(</tt><tt class="py-string">'/torrents/search/%s'</tt> <tt class="py-op">%</tt> <tt id="link-11" class="py-name"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-11', 'query', 'link-7');">query</a></tt><tt class="py-op">,</tt> <tt class="py-name">params</tt><tt class="py-op">)</tt> </tt>
+<a name="L92"></a><tt class="py-lineno"> 92</tt>  <tt class="py-line">        <tt class="py-name">response</tt> <tt class="py-op">=</tt> <tt class="py-name">q</tt><tt class="py-op">.</tt><tt class="py-name">json</tt><tt class="py-op">(</tt><tt class="py-op">)</tt> </tt>
+<a name="L93"></a><tt class="py-lineno"> 93</tt>  <tt class="py-line"> </tt>
+<a name="L94"></a><tt class="py-lineno"> 94</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-string">'error'</tt> <tt class="py-keyword">in</tt> <tt class="py-name">response</tt><tt class="py-op">:</tt> </tt>
+<a name="L95"></a><tt class="py-lineno"> 95</tt>  <tt class="py-line">            <tt class="py-keyword">raise</tt> <tt id="link-12" class="py-name" targets="Class api.RequestsError=api.RequestsError-class.html"><a title="api.RequestsError" class="py-name" href="#" onclick="return doclink('link-12', 'RequestsError', 'link-12');">RequestsError</a></tt><tt class="py-op">(</tt><tt class="py-name">response</tt><tt class="py-op">[</tt><tt class="py-string">'error'</tt><tt class="py-op">]</tt><tt class="py-op">)</tt> </tt>
+<a name="L96"></a><tt class="py-lineno"> 96</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-name">response</tt> </tt>
+</div><a name="L97"></a><tt class="py-lineno"> 97</tt>  <tt class="py-line"> </tt>
+<a name="API.raw_download"></a><div id="API.raw_download-def"><a name="L98"></a><tt class="py-lineno"> 98</tt> <a class="py-toggle" href="#" id="API.raw_download-toggle" onclick="return toggle('API.raw_download');">-</a><tt class="py-line">    <tt class="py-keyword">def</tt> <a class="py-def-name" href="api.API-class.html#raw_download">raw_download</a><tt class="py-op">(</tt><tt class="py-param">self</tt><tt class="py-op">,</tt> <tt class="py-param">torrent</tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+</div><div id="API.raw_download-collapsed" style="display:none;" pad="+++" indent="++++++++"></div><div id="API.raw_download-expanded"><a name="L99"></a><tt class="py-lineno"> 99</tt>  <tt class="py-line">        <tt class="py-docstring">"""</tt> </tt>
+<a name="L100"></a><tt class="py-lineno">100</tt>  <tt class="py-line"><tt class="py-docstring">        @summary: Downloads torrent to disk</tt> </tt>
+<a name="L101"></a><tt class="py-lineno">101</tt>  <tt class="py-line"><tt class="py-docstring">        @param torrent: Torrent to download</tt> </tt>
+<a name="L102"></a><tt class="py-lineno">102</tt>  <tt class="py-line"><tt class="py-docstring">        @type torrent: dictionary</tt> </tt>
+<a name="L103"></a><tt class="py-lineno">103</tt>  <tt class="py-line"><tt class="py-docstring">        @return: Path of the downloaded torrent</tt> </tt>
+<a name="L104"></a><tt class="py-lineno">104</tt>  <tt class="py-line"><tt class="py-docstring">        @rtype: str</tt> </tt>
+<a name="L105"></a><tt class="py-lineno">105</tt>  <tt class="py-line"><tt class="py-docstring">        """</tt> </tt>
+<a name="L106"></a><tt class="py-lineno">106</tt>  <tt class="py-line">        <tt class="py-name">file_name</tt> <tt class="py-op">=</tt> <tt id="link-13" class="py-name"><a title="common.format_filename" class="py-name" href="#" onclick="return doclink('link-13', 'format_filename', 'link-1');">format_filename</a></tt><tt class="py-op">(</tt><tt class="py-name">torrent</tt><tt class="py-op">[</tt><tt class="py-string">'name'</tt><tt class="py-op">]</tt> <tt class="py-op">+</tt> <tt class="py-string">'.torrent'</tt><tt class="py-op">)</tt> </tt>
+<a name="L107"></a><tt class="py-lineno">107</tt>  <tt class="py-line">        <tt class="py-name">torrent_id</tt> <tt class="py-op">=</tt> <tt class="py-name">torrent</tt><tt class="py-op">[</tt><tt class="py-string">'id'</tt><tt class="py-op">]</tt> </tt>
+<a name="L108"></a><tt class="py-lineno">108</tt>  <tt class="py-line">        <tt class="py-name">q</tt> <tt class="py-op">=</tt> <tt class="py-name">self</tt><tt class="py-op">.</tt><tt id="link-14" class="py-name"><a title="api.API.query" class="py-name" href="#" onclick="return doclink('link-14', 'query', 'link-7');">query</a></tt><tt class="py-op">(</tt><tt class="py-string">'/torrents/download/%s'</tt> <tt class="py-op">%</tt> <tt class="py-name">torrent_id</tt><tt class="py-op">)</tt> </tt>
+<a name="L109"></a><tt class="py-lineno">109</tt>  <tt class="py-line"> </tt>
+<a name="L110"></a><tt class="py-lineno">110</tt>  <tt class="py-line">        <tt class="py-keyword">if</tt> <tt class="py-keyword">not</tt> <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">path</tt><tt class="py-op">.</tt><tt class="py-name">exists</tt><tt class="py-op">(</tt><tt id="link-15" class="py-name"><a title="api.DOWNLOAD_DIR" class="py-name" href="#" onclick="return doclink('link-15', 'DOWNLOAD_DIR', 'link-3');">DOWNLOAD_DIR</a></tt><tt class="py-op">)</tt><tt class="py-op">:</tt> </tt>
+<a name="L111"></a><tt class="py-lineno">111</tt>  <tt class="py-line">            <tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">makedirs</tt><tt class="py-op">(</tt><tt id="link-16" class="py-name"><a title="api.DOWNLOAD_DIR" class="py-name" href="#" onclick="return doclink('link-16', 'DOWNLOAD_DIR', 'link-3');">DOWNLOAD_DIR</a></tt><tt class="py-op">)</tt> </tt>
+<a name="L112"></a><tt class="py-lineno">112</tt>  <tt class="py-line"> </tt>
+<a name="L113"></a><tt class="py-lineno">113</tt>  <tt class="py-line">        <tt class="py-keyword">with</tt> <tt class="py-name">open</tt><tt class="py-op">(</tt><tt class="py-string">"%s/%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt id="link-17" class="py-name"><a title="api.DOWNLOAD_DIR" class="py-name" href="#" onclick="return doclink('link-17', 'DOWNLOAD_DIR', 'link-3');">DOWNLOAD_DIR</a></tt><tt class="py-op">,</tt> <tt class="py-name">file_name</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt class="py-string">'wb'</tt><tt class="py-op">)</tt> <tt class="py-keyword">as</tt>  <tt class="py-name">t_fic</tt><tt class="py-op">:</tt> </tt>
+<a name="L114"></a><tt class="py-lineno">114</tt>  <tt class="py-line">            <tt class="py-name">t_fic</tt><tt class="py-op">.</tt><tt class="py-name">write</tt><tt class="py-op">(</tt><tt class="py-name">q</tt><tt class="py-op">.</tt><tt class="py-name">content</tt><tt class="py-op">)</tt> </tt>
+<a name="L115"></a><tt class="py-lineno">115</tt>  <tt class="py-line">        <tt class="py-keyword">return</tt> <tt class="py-string">"%s\%s\%s"</tt> <tt class="py-op">%</tt> <tt class="py-op">(</tt><tt class="py-name">os</tt><tt class="py-op">.</tt><tt class="py-name">getcwd</tt><tt class="py-op">(</tt><tt class="py-op">)</tt><tt class="py-op">,</tt> <tt id="link-18" class="py-name"><a title="api.DOWNLOAD_DIR" class="py-name" href="#" onclick="return doclink('link-18', 'DOWNLOAD_DIR', 'link-3');">DOWNLOAD_DIR</a></tt><tt class="py-op">,</tt> <tt class="py-name">file_name</tt><tt class="py-op">)</tt> </tt>
+</div></div><a name="L116"></a><tt class="py-lineno">116</tt>  <tt class="py-line"> </tt><script type="text/javascript">
+<!--
+expandto(location.href);
+// -->
+</script>
+</pre>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >DESKTOP-FQI3R7C</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri May 26 15:45:37 2017
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
